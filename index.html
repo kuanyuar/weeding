@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>婚禮問答互動</title>
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyD10xAti8bA4liNUP7KRsKm_i4OhqnbDEA",
+    authDomain: "weddingquiz-690e4.firebaseapp.com",
+    databaseURL: "https://weddingquiz-690e4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "weddingquiz-690e4",
+    storageBucket: "weddingquiz-690e4.firebasestorage.app",
+    messagingSenderId: "987305840417",
+    appId: "1:987305840417:web:7c2ba93cc36c70953df860",
+    measurementId: "G-YXQEL85Z4B"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1 id="question">載入中...</h1>
+    <div id="options" class="options"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
