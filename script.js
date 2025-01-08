@@ -1,13 +1,14 @@
 // Firebase 配置
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
+    apiKey: "AIzaSyD10xAti8bA4liNUP7KRsKm_i4OhqnbDEA",
+    authDomain: "weddingquiz-690e4.firebaseapp.com",
+    databaseURL: "https://weddingquiz-690e4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "weddingquiz-690e4",
+    storageBucket: "weddingquiz-690e4.firebasestorage.app",
+    messagingSenderId: "987305840417",
+    appId: "1:987305840417:web:7c2ba93cc36c70953df860",
+    measurementId: "G-YXQEL85Z4B"
+  };
 
 // 初始化 Firebase
 firebase.initializeApp(firebaseConfig);
