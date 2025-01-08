@@ -31,7 +31,7 @@ let currentQuestionIndex = 1;
 
 // 加載問題
 function loadQuestion(index) {
-  const questionRef = db.ref(`questions/${index}`);
+  const questionRef = db.ref(`questions/${currentQuestionIndex}`);
   questionRef.once("value", (snapshot) => {
     if (snapshot.exists()) {
       const data = snapshot.val();
