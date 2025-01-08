@@ -130,11 +130,11 @@ function updateLeaderboard() {
   });
 }
 
-// 每次問題完成後更新排行榜
-setTimeout(() => {
-  updateLeaderboard();
-}, 3000);
 
 // 啟動遊戲
 loadQuestion(currentQuestionIndex);
 
+// 每次問題完成後更新排行榜
+setTimeout(() => {
+  updateLeaderboard();
+}, 3000);
