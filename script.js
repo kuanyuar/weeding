@@ -2,6 +2,7 @@
 const firebaseConfig = {
     apiKey: "AIzaSyD10xAti8bA4liNUP7KRsKm_i4OhqnbDEA",
     authDomain: "weddingquiz-690e4.firebaseapp.com",
+    databaseURL: "https://weddingquiz-690e4-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "weddingquiz-690e4",
     storageBucket: "weddingquiz-690e4.firebasestorage.app",
     messagingSenderId: "987305840417",
