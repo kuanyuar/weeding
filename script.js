@@ -31,21 +31,15 @@ let currentQuestionIndex = 1;
 
 // 加載問題
 function loadQuestion(index) {
-  const questionRef = db.ref(`questions/${currentQuestionIndex}`);
-  questionRef.once("value", (snapshot) => {
-    if (snapshot.exists()) {
-      const data = snapshot.val();
-      console.log("讀取到的問題資料：", data); // 在控制台檢查資料
-      displayQuestion(data);
-    } else {
-      console.log("問題節點不存在或數據加載失敗！");
-      document.getElementById("question").innerText = "問答結束！感謝您的參與！";
-      document.getElementById("options").innerHTML = "";
-    }
-  }).catch((error) => {
-    console.error("讀取資料庫時發生錯誤：", error);
-    document.getElementById("question").innerText = "資料加載失敗，請稍後再試。";
-  });
+  const questionRef = db.ref("questions");
+questionRef.once("value", (snapshot) => {
+  if (snapshot.exists()) {
+    console.log("讀取到的所有問題：", snapshot.val());
+  } else {
+    console.log("問題節點不存在或數據加載失敗！");
+  }
+});
+
 }
 
 
