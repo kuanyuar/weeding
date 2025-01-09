@@ -31,16 +31,20 @@ let currentQuestionIndex = 1;
 
 // 加載問題
 function loadQuestion(index) {
-  const questionRef = db.ref("questions");
-questionRef.once("value", (snapshot) => {
-  if (snapshot.exists()) {
-    console.log("讀取到的所有問題：", snapshot.val());
-  } else {
-    console.log("問題節點不存在或數據加載失敗！");
-  }
-});
-
+  const questionRef = db.ref(`questions/${index}`);
+  questionRef.once("value", (snapshot) => {
+    if (snapshot.exists()) {
+      const data = snapshot.val();
+      console.log("讀取到的問題：", data);
+      displayQuestion(data);
+    } else {
+      console.log(`問題 ${index} 不存在或數據加載失敗！`);
+    }
+  }).catch((error) => {
+    console.error("讀取資料庫時發生錯誤：", error);
+  });
 }
+
 
 
 // 顯示問題
