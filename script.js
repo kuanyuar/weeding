@@ -26,6 +26,19 @@ db.ref(`responses/${guestId}`).set({
   answers: {}
 });
 
+// 更新參加人數
+function updateParticipantCount() {
+  const participantCountRef = db.ref("responses");
+
+  participantCountRef.on("value", (snapshot) => {
+    const participants = snapshot.val();
+    const count = participants ? Object.keys(participants).length : 0;
+    document.getElementById("participant-count").innerText = `目前參加人數：${count} 人`;
+  });
+}
+// 啟動人數統計
+updateParticipantCount();
+
 // 問題邏輯
 let currentQuestionIndex = 1;
 
@@ -95,6 +108,7 @@ function checkAnswer(selected, correct, questionId) {
     currentQuestionIndex++;
     loadQuestion(currentQuestionIndex);
     updateLeaderboard();
+    updateParticipantCount();
   }, 2000);
 }
 
